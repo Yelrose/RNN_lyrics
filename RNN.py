@@ -16,7 +16,7 @@ def softmax(x):
 
 def clip_gradient(W):
     if np.sqrt(np.sum(W*W)) > 5:
-        W = 5 / np.sum(W*W) * W
+        W = 5 / np.sqrt(np.sum(W*W)) * W
     return W
 #solving per case
 def recurrent_neural_network(X,Y,model,alpha):
